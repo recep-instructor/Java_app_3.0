@@ -1,4 +1,4 @@
-@Library('shared-lib@main') _
+@Library('shared-lib') _
 
 pipeline{
 
@@ -18,11 +18,13 @@ pipeline{
                     when { expression {  params.action == 'create' } }
             steps{
                 script {
+                  
                   def workingDir = checkoutCode("https://github.com/recep-instructor/Java_app_3.0.git")
                   echo $workingDir
             
             }
         }
+      }
          stage('Unit Test maven'){
          
          when { expression {  params.action == 'create' } }
