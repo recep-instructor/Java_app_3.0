@@ -18,7 +18,7 @@ pipeline{
                     when { expression {  params.action == 'create' } }
             steps{
                 script {
-                  branch: "main",
+
                   def workingDir = checkoutCode("https://github.com/recep-instructor/Java_app_3.0.git")
                   echo $workingDir
             
